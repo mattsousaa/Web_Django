@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabelas</title>
+
+    <style>
+    table {
+        border-collapse: collapse;
+        border: 3px solid rgb(100, 130, 40);
+        width: 75%;
+    }
+    tbody {
+        font-size: 90%;
+        font-style: italic;
+        letter-spacing: lpx;
+    }
+    tfoot {
+        font-weight: bold;
+        font-size: 75%;
+    }
+    thead {
+        color: darkblue;
+    }
+    td{
+        text-align: center;
+        border: lpx solid rgb(100, 130, 40);
+    }
+    </style>
+    
+</head>
+<body>
+    <table>
+        <caption>Agenda de endereços</caption>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Cidade</th>
+                <th colspan="2"> Endereço </th> <!-- 2 colunas -->
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td colspan="5"> Aprendendo HTML </td> <!-- 5 colunas -->
+            </tr>
+        </tfoot>
+
+        <tbody>
+            <tr>
+                <th>Mateus</th>
+                <th>Sousa</th>
+                <th>Rua 21 de Novembro, 639</th>
+                <th>Tibiquari</th>
+            </tr>
+            <tr>
+                <td> Renato </td>
+                <td> dos Reis </td>
+                <td> Santos </td>
+                <td> Rua dos Ciclames, 272 </td>
+                <td> Aldeota </td>
+            </tr>
+            <tr>
+                <td> Amanda </td>
+                <td> Oliveira </td>
+                <td> Pernambuco </td>
+                <td> Rua 26 de Março, 639 </td>
+                <td> Caucaia </td>
+            </tr>
+            <tr>
+                <td> Fulano </td>
+                <td> da Silva </td>
+                <td> Natal </td>
+                <td> Rua Emérito, 639 </td>
+                <td> Ai BB </td>
+            </tr>
+            <tr>
+                <td> Fulano </td>
+                <td> da Silva </td>
+                <td> Natal </td>
+                <td> Rua Emérito, 639 </td>
+                <td> Ai BB </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
