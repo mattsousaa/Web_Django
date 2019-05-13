@@ -1,0 +1,47 @@
+## Iniciando ambiente virtual ##
+
+python3 -m venv
+python3 -m venv myEnv
+
+## Entrar na capsula ##
+
+source myEnv/bin/activate
+
+## Instalar Django ##
+pip install django
+
+## Teste se Django funciona ##
+python
+>>> import django
+>>> django.VERSION
+>>> exit()
+
+## Iniciar projeto Django ##
+django-admin startproject django01 .
+
+## Configurar wsgi.py ##
+LANGUAGE_CODE = 'pt-br'
+TIME_ZONE = 'America/Sao_paulo'
+
+## Rodar aplicação ##
+python manage.py runserver
+
+## Colocar no browser ##
+http://localhost:8000/
+
+## Criar APP ##
+python manage.py startapp clientes
+
+## MIGRATION ##
+python manage.py migrate 
+Registrar aplicação em INSTALLED_APPS em settings.py (Serve para consolidar classes no banco - tabelas)
+python manage.py makemigrations (cria a migration mas não aplica no banco)
+python manage.py migrate (aplica no banco - tabela no banco)
+
+## CRIAR SUPER-USER ##
+python manage.py createsuperuser
+
+## TEMPLATES ##
+Definir aonde os templates serão guardados
+
+
