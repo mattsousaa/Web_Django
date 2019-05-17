@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import Person
 
-# Register your models here.
+# Registrar Person no banco ADMIN
+admin.site.register(Person)

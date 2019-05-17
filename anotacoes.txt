@@ -39,9 +39,58 @@ python manage.py makemigrations (cria a migration mas não aplica no banco)
 python manage.py migrate (aplica no banco - tabela no banco)
 
 ## CRIAR SUPER-USER ##
-python manage.py createsuperuser
+* python manage.py createsuperuser
+* Registrar Person no banco em admin.py: admin.site.register(Person)
 
 ## TEMPLATES ##
-Definir aonde os templates serão guardados
+* Templates são arquivos não estáticos
+* Definir aonde os templates serão guardados - settings.py
+* Criar pasta
+* Definir arquivos HTML nessa pasta
+* Importar render nas views para retornar HTML formatado
+* from django.shortcuts import render
+* Jinja - Linguagem de templates do Django (permite colocar comandos)
 
+## ARQUIVOS ESTÁTICOS ##
+
+* Definir pasta em settings.py
+
+STATICFILES_DIRS = [
+    'files_statics', ==> mesmo nome da pasta criada
+]
+
+* Colocar cabeçalho em HTML para importar arquivos estáticos: {% load static %}
+* importar arquivo CSS: <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+* importar classe:
+<body>
+    <h1 class="home">Ola Mundo</h1>
+</body>
+
+* Adicionar imagens: <img src="{% static "my_app/example.jpg" %}" alt="My image">
+
+## ARQUIVOS DE MEDIA ##
+
+* Definir pasta e redefinir settings.py:
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
+
+* Definir atributo foto em classe Person ImageField: Instalar pip install Pillow
+* Exibindo arquivos no localhost em views.py
+* from django.conf import settings
+* from django.conf.urls.static import static
+
+urlpatterns = [
+    path('hello/', hello),
+    path('admin/', admin.site.urls),
+    path('articles/<int:year>/', articles),
+    path('person/', include(clients_urls)),
+    path('pessoa/<str:nome>/', fnome),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+## Extraindo URLs do APP ##
+
+* Criar urls.py no APP
+* Importar include sem ser no APP (from django.urls import path, include)
+* Esse include permite importar URLS de outras aplicações
 

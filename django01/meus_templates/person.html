@@ -8,16 +8,31 @@
 </head>
 <body>
     
-    <ul>
+    <a href="{% url 'logout' %}">Sair</a>
+
+    {% if user.is_authenticated %}
+        <p>Olá {{ user.username }}</p>
+    {% endif %}
+
+    <ol>
+        <b><li> <a href="{% url 'getLastMac' %}"> Consultar a última ocorrência de um MAC </a> </li></b>
+        <b><li> <a href="{% url 'getAllMacs' %}"> Consultar todos os MACs </a> </li></b>
+        <b><li> <a href="{% url 'getOccurMacs' %}"> Consultar todas as ocorrências de um MAC </a> </li></b>
+        <b><li> <a href="{% url 'eraseDataBase' %}"> Limpar banco </a> </li></b>
+    </ol>
+
+    <!-- <ul>
         {% for person in persons %}
 
             <li>{{ person.first_name }}</li>
 
         {% endfor %}
-    </ul>
-
+    </ul> -->
+    
+    <a href="https://cloud.mongodb.com/user#/atlas/login">Login Mongo Atlas</a>
     <!-- âncora ligando a um arquivo externo -->
-    <a href="{% url 'new_person' %}">Cadastrar Clientes</a>
+    <!-- <a href="{% url 'new_person' %}">Cadastrar Clientes</a> -->
+    
 
-</body>
+    </body>
 </html>
